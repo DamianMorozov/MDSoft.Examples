@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.010] - 2021-09-02
+## [0.1.010] - 2021-09-03
 ### Added
 - Init repo
+- BlazorApp project
+- ConsoleTcpClient project
+- WpfNet project
