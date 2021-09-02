@@ -1,0 +1,121 @@
+﻿@page "/telegramclient"
+@inherits LayoutComponentBase
+
+<h1>Telegam client</h1>
+
+<a href="https://github.com/ilyalatt/Telega/" target="_blank">Telega repository</a>
+<br />
+<a href="https://ilyalatt.github.io/Telega/docs/" target="_blank">Telega docs</a>
+<br />
+<a href="https://www.nuget.org/packages/Telega/" target="_blank">NuGet package</a>
+<br />
+<a href="https://my.telegram.org/apps/" target="_blank">API development tools</a>
+<br />
+
+<table border="1" style="width: 100%;" >
+	<tr>
+		<th>
+			<label>Setting</label>
+		</th>
+		<th>
+			<label>Value</label>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<label>API ID</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="number" @bind=@TelegramClientSettings.ApiId />
+			}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>API hash</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="string" @bind=@TelegramClientSettings.ApiHash />
+			}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>User number</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="string" @bind=@TelegramClientSettings.Phone />
+			}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Code</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="string" @bind=@TelegramClientSettings.Code />
+			}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Cloud password</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="string" @bind=@TelegramClientSettings.CloudPsw />
+			}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Message</label>
+		</td>
+		<td>
+			@if (TelegramClientSettings != null)
+			{
+				<input style="width: 100%;" type="string" @bind=@TelegramClientSettings.Message />
+			}
+		</td>
+	</tr>
+</table>
+<br />
+
+<button @onclick=@ClearLog >Clear log</button>
+<br />
+
+<button @onclick=@(() => SendCode()) >Send code</button>
+<br />
+
+<button @onclick=@(() => SignIn()) >Sign in</button>
+<br />
+
+<button @onclick=@(() => GetAccountInfo()) >Get account info</button>
+<br />
+
+<button @onclick=@(() => SendMessage()) >Send message</button>
+<br />
+
+<button @onclick=@(() => SendPhoto()) >Send photo</button>
+<br />
+
+<button @onclick=@(() => GetChannels()) >GetChannels</button>
+<br />
+
+<section>
+	@foreach (string line in Log)
+	{
+		<label >@line</label>
+		<br />
+	}
+</section>
+<br />

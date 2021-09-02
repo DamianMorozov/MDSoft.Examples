@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <FileVersion>0.3.60</FileVersion>
+    <AssemblyVersion>0.3.60</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TDLib" Version="1.7.0" />
+    <PackageReference Include="TDLib.Api" Version="1.7.0" />
+    <PackageReference Include="Telega" Version="0.4.0" />
+  </ItemGroup>
+
+</Project>
